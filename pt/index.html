@@ -1,860 +1,1548 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
-<title>Alan Carlos Meira Leal</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
-<style type="text/css">
-	@import url(
-	https://fonts.googleapis.com/css?family=Lato:400,700
-);
-body {
-	background: #fff;
-	font-family: Lato, sans-serif;
-	margin: 0 0 80px;
-}
-a {
-	color: #2ecc71;
-}
-a:focus,
-a:hover {
-	color: #f1c40f;
-	text-decoration: none;
-}
-p {
-	line-height: 1.5;
-	margin: 0;
-}
-p + p {
-	margin-top: 10px;
-}
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Alan Carlos Meira Leal</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+  <style>
+  /********************************************
+* 	reset from
+* 	http://meyerweb.com/eric/tools/css/reset/
+*******************************************/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
 h1,
 h2,
 h3,
-h4 {
-	margin-top: 0
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
 }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
 section {
-	margin-top: 30px;
+    display: block;
 }
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/****************
+*	COMMONS
+****************/
+
+body,
+html {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 13px;
+    color: #40484f;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.46153846;
+    text-align: left;
+    -webkit-text-size-adjust: 100%;
+}
+
+p {
+    display: block;
+    margin-bottom: 1.3em;
+}
+
+a {
+    color: #0095ff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0c65a5;
+    text-decoration: underline;
+}
+
+ul {
+    margin-top: 1rem;
+}
+
 li {
-	line-height: 1.8;
-	list-style: none;
+    list-style-type: square;
+    list-style-position: outside;
+    margin-left: 1.3em;
 }
-li:before {
-	content: "\f052";
-	float: left;
-	font: 13px Octicons;
-	margin-top: 6px;
-	margin-left: -20px;
-	opacity: .1;
-	position: absolute;
+
+.highlights>li>p {
+    margin-bottom: 0.5em;
 }
-blockquote {
-	border-left: 5px solid #e7e9ec;
-	font-size: 14px;
+
+h1 {
+    font-size: 2rem;
 }
+
+h2 {
+    font-size: 1.67rem;
+}
+
+h3 {
+    font-size: 1.27rem;
+}
+
 em {
-	color: #95a5a6;
-	font-weight: normal;
-	font-style: normal;
-}
-h4 span:first-child {
-	color: #000;
-	font-weight: bold;
-}
-.container {
-	max-width: 750px;
-	padding: 0 30px;
-}
-.col-sm-6 {
-	margin-bottom: 10px;
-}
-.col-sm-12 h4 {
-	margin-top: 12px; 
-}
-.col-sm-12 + .col-sm-12 {
-	margin-top: 30px;
-}
-#header {
-	background: #f4f6f6;
-	padding: 50px 0;
-	margin-bottom: 30px;
-}
-#header h2 {
-	color: #95a5a6;
-	font-size: 24px;
-}
-#content h3 {
-	color: #f1c40f;
-	font-size: 26px;
-	margin-top: -4px;
-}
-#content aside {
-	text-align: right;
-	padding-right: 30px;
-}
-#profiles .network {
-	text-transform: capitalize;
-}
-#work .position,
-#volunteer .position {
-	font-weight: bold;
-	margin-bottom: 8px;
-}
-#education .area {
-	font-weight: bold;
-}
-#education .area:before {
-	content: "\f0d7";
-	font: 16px Octicons;
-	margin-right: 6px;
-}
-#education .studyType {
-	margin-left: 25px;
-}
-#awards .summary,
-#publications .summary {
-	margin-top: 8px;
-}
-#publications .website a:before {
-	content: attr(href);
+    color: #757575;
 }
 
-@media (min-width: 480px) {
-	.strike-through {
-		border-top: 1px solid #f4f6f6;
-		height: 20px;
-		margin-top: 12px;
-		margin-bottom: -2px;
-		position: relative;
-	}
-	.strike-through span,
-	.strike-through a {
-		background: #fff;
-		position: absolute;
-	}
-	.strike-through span:first-child {
-		padding-right: 20px;
-		margin-top: -12px;
-	}
-	.strike-through span + span {
-		font-size: 14px;
-		margin-top: -10px;
-		padding-left: 20px;
-		right: 0;
-	}
-}
-@media (max-width: 768px) {
-	.col-sm-6:last-child {
-		margin-bottom: 0px;
-	}
-	#content aside {
-		margin-bottom: 20px;
-		padding-right: 0;
-		text-align: left;
-	}
-	#publications .website a:before {
-		content: "View publication";
-	}
-}
-@media (max-width: 480px) {
-	h1 {
-		font-size: 26px;
-	}
-	.date {
-		font-size: 14px;
-		margin-bottom: 5px;
-	}
-	.strike-through span:first-child {
-		margin-bottom: 7px;
-	}
-	.strike-through span {
-		display: block;
-	}	
-	#header {
-		margin-bottom: 10px;
-		padding: 40px 0;
-	}
-	#actions {
-		display: none;
-	}
+blockquote {
+    margin-bottom: 1em;
 }
 
-	</style>
-</head>
-<body>
-<header id="header">
-<div class="container">
-<div class="row">
-<div class="col-sm-9 col-sm-push-3">
-<h1>
-Alan Carlos Meira Leal
-</h1>
-<h2>
-Full Stack Software Engineer
-</h2>
-</div>
-</div>
-</div>
-</header>
-<div id="content" class="container">
-<section id="contact" class="row">
-<aside class="col-sm-3">
-<h3>Contact</h3>
-</aside>
-<div class="col-sm-9">
-<div class="row">
-<div class="col-sm-6">
-<strong>Phone</strong>
-<div class="phone">(31) 99788 2008</div>
-</div>
-<div class="col-sm-6">
-<strong>Website</strong>
-<div class="website">
-<a href="http://www.meiraleal.com">http://www.meiraleal.com</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="about" class="row">
-<aside class="col-sm-3">
-<h3>About</h3>
-</aside>
-<div class="col-sm-9">
-<p>Desenvolvedor Fullstack. atuei nos mais variados setores de mercado e tecnologias, liderando em especial projetos de desenvolvimento web, bem como desenvolvimento mobile e desktop baseados em tecnologia web (por exemplo: React Native, PhoneGap, Electron). Tenho também experiência nos mais váriados tipos de empresa e ambiente, desde projetos solos até empresas com milhares de funcionários e equipes de centenas de pessoas. Estou aberto a propostas para trabalhar como lider técnico, desenvolvedor frontend, backend, devops ou gestor de projetos. </p>
-</div>
-</section>
-<section id="profiles" class="row">
-<aside class="col-sm-3">
-<h3>Profiles</h3>
-</aside>
-<div class="col-sm-9">
-<div class="row">
-<div class="col-sm-6">
-<strong class="network">
-Linkedin
-</strong>
-<div class="username">
-<div class="url">
-<a href="https://www.linkedin.com/in/alanmeira">alanmeira</a>
-</div>
-</div>
-</div>
-<div class="col-sm-6">
-<strong class="network">
-Github
-</strong>
-<div class="username">
-<div class="url">
-<a href="https://github.com/meiraleal">meiraleal</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="work" class="row">
-<aside class="col-sm-3">
-<h3>Work</h3>
-</aside>
-<div class="col-sm-9">
-<div class="row">
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>Freelancer</span>
-<span class="date">
-2017-07-01 —
-</span>
-</h4>
-<div class="position">
-Freelancer &amp; Consultor
-</div>
-<div class="summary">
-<p></p>
-</div>
-<h4>Highlights</h4>
-<ul class="highlights">
-<li class="bullet">React</li>
-<li class="bullet">React Native</li>
-<li class="bullet">MongoDB</li>
-<li class="bullet">Angular 2/4</li>
-<li class="bullet">Node.JS</li>
-<li class="bullet">Telegram</li>
-</ul>
-</div>
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>Advantage Media Inc.</span>
-<span class="date">
-2016-11-01 — 2017-07-01
-</span>
-</h4>
-<div class="position">
-Frontend Engineer
-</div>
-<div class="summary">
-<p>Responsável pelo frontend de um projeto de integração com o Google Adwords &amp; DoubleClick. Comunicação 100% em inglês com os outros membros da equipe (dinamarqueses).</p>
-</div>
-<h4>Highlights</h4>
-<ul class="highlights">
-<li class="bullet">React</li>
-<li class="bullet">MongoDB</li>
-<li class="bullet">Angular 2/4</li>
-<li class="bullet">Node.JS</li>
-<li class="bullet">Google APIs</li>
-</ul>
-</div>
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>Prefeitura de Maricá/RJ</span>
-<span class="date">
-2016-01-01 — 2016-08-01
-</span>
-</h4>
-<div class="position">
-Assessor de Tecnologia
-</div>
-<div class="summary">
-<p>Desenvolvimento de uma plataforma de chatbot em cima da API do Telegram</p>
-</div>
-<h4>Highlights</h4>
-<ul class="highlights">
-<li class="bullet">Telegram API</li>
-<li class="bullet">Clojure</li>
-<li class="bullet">DataScript</li>
-<li class="bullet">React Native</li>
-</ul>
-</div>
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>Freelancer/Indie Developer</span>
-<span class="date">
-2014-07-01 — 2015-12-01
-</span>
-</h4>
-<div class="position">
-Freelancer
-</div>
-<div class="summary">
-<p></p>
-</div>
-<h4>Highlights</h4>
-<ul class="highlights">
-<li class="bullet">Go</li>
-<li class="bullet">ASP.NET</li>
-<li class="bullet">React</li>
-<li class="bullet">React-Native</li>
-<li class="bullet">Clojure</li>
-<li class="bullet">DataScript</li>
-<li class="bullet">ClojureScript</li>
-</ul>
-</div>
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>Veduca Edtech</span>
-<span class="date">
-2013-01-01 — 2013-05-01
-</span>
-</h4>
-<div class="position">
-Full Stack Software Engineer
-</div>
-<div class="summary">
-<p>Responsável por liderar, escolher o stack e coordenar a implementação de uma nova versão do sistema (substituindo uma versão em PHP) junto a uma equipe de outros 2 desenvolvedores, 1 designer, 1 gestor de produto e 1 gestor de conteúdo.</p>
-</div>
-<h4>Highlights</h4>
-<ul class="highlights">
-<li class="bullet">Ruby on Rails</li>
-<li class="bullet">PostgreSQL</li>
-<li class="bullet">JavaScript</li>
-<li class="bullet">sphinx</li>
-</ul>
-</div>
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>Engarte</span>
-<span class="date">
-2012-02-01 — 2014-10-01
-</span>
-</h4>
-<div class="position">
-Co-fundador e CTO
-</div>
-<div class="summary">
-<p>Responsável por todo o ciclo de um projeto tecnológico, desde o desenvolvimento da versão 1.0, recrutamento, gestão de equipe e produto, captação de recursos a pitches em concursos.</p>
-</div>
-<h4>Highlights</h4>
-<ul class="highlights">
-<li class="bullet">Ruby on Rails</li>
-<li class="bullet">JavaScript</li>
-<li class="bullet">MongoDB</li>
-<li class="bullet">startups</li>
-<li class="bullet">marketing digital</li>
-<li class="bullet">CRM</li>
-</ul>
-</div>
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>TOTVS</span>
-<span class="date">
-2010-11-01 — 2011-06-01
-</span>
-</h4>
-<div class="position">
-Analista de Sistemas
-</div>
-<div class="summary">
-<p>Integrante de uma equipe composta por 30 pessoas; Manutenção do sistema de Folha de Pagamentos da TOTVS, usado por algumas das maiores empresas do Brasil e da América Latina.</p>
-</div>
-<h4>Highlights</h4>
-<ul class="highlights">
-<li class="bullet">.NET</li>
-<li class="bullet">C#</li>
-<li class="bullet">Engenharia de Software</li>
-</ul>
-</div>
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>MoIP</span>
-<span class="date">
-2010-06-01 — 2011-06-01
-</span>
-</h4>
-<div class="position">
-Consultor Externo
-</div>
-<div class="summary">
-<p>responsável pelo MoIP Labs, portal de relacionamento com a comunidade de desenvolvedores do MoIP</p>
-</div>
-<h4>Highlights</h4>
-<ul class="highlights">
-<li class="bullet">JavaScript</li>
-<li class="bullet">PHP</li>
-<li class="bullet">Ruby</li>
-<li class="bullet">Python</li>
-</ul>
-</div>
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>Via6</span>
-<span class="date">
-2009-08-01 — 2010-11-01
-</span>
-</h4>
-<div class="position">
-Lead Full Stack Developer
-</div>
-<div class="summary">
-<p>Lider técnico; projeto com 2 milhões de usuários na base de dados;</p>
-</div>
-<h4>Highlights</h4>
-<ul class="highlights">
-<li class="bullet">PHP</li>
-<li class="bullet">CSS</li>
-<li class="bullet">Bootstrap</li>
-<li class="bullet">MySQL</li>
-<li class="bullet">Ruby on Rails</li>
-<li class="bullet">JavaScript</li>
-</ul>
-</div>
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>Docatel</span>
-<span class="date">
-2009-03-01 — 2009-08-01
-</span>
-</h4>
-<div class="position">
-Lead Developer
-</div>
-<div class="summary">
-<p>Responsável por liderar a equipe de desenvolvimento e implantar melhores práticas. Projeto na área de engenharia de telecomunicações.</p>
-</div>
-<h4>Highlights</h4>
-<ul class="highlights">
-<li class="bullet">PHP</li>
-<li class="bullet">Agile Development</li>
-<li class="bullet">Python</li>
-<li class="bullet">Ruby on Rails</li>
-</ul>
-</div>
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>Samba Tech</span>
-<span class="date">
-2008-08-01 — 2009-02-01
-</span>
-</h4>
-<div class="website pull-right">
-<a href=""></a>
-</div>
-<div class="position">
-Líder de Projeto/Software Engineer
-</div>
-<div class="summary">
-<p>Responsável pela prototipação e migração do sistema de PHP para Ruby on Rails. Composição de equipe, liderança e arquitetura de software.</p>
-</div>
-<h4>Highlights</h4>
-<ul class="highlights">
-<li class="bullet">Ruby on Rails</li>
-<li class="bullet">SCRUM</li>
-<li class="bullet">AWS</li>
-<li class="bullet">GNU/Linux</li>
-<li class="bullet">emacs</li>
-</ul>
-</div>
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>HCS Comp.</span>
-<span class="date">
-2007-07-01 — 2008-09-01
-</span>
-</h4>
-<div class="website pull-right">
-<a href=""></a>
-</div>
-<div class="position">
-Lider de Projeto/Programador Sênior
-</div>
-<div class="summary">
-<p>Responsável pela gestão e organização dos projetos, liderança de equipe e interface com clientes.</p>
-</div>
-<h4>Highlights</h4>
-<ul class="highlights">
-<li class="bullet">PHP</li>
-<li class="bullet">.NET</li>
-<li class="bullet">Java</li>
-<li class="bullet">Ruby on Rails</li>
-</ul>
-</div>
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>Cobrar NCA Recuperação de Creditos</span>
-<span class="date">
-2005-06-01 — 2006-06-01
-</span>
-</h4>
-<div class="website pull-right">
-<a href=""></a>
-</div>
-<div class="position">
-Auxiliar de Analista de Sistemas
-</div>
-<div class="summary">
-<p></p>
-</div>
-<h4>Highlights</h4>
-<ul class="highlights">
-<li class="bullet">PHP</li>
-<li class="bullet">SQL Server</li>
-<li class="bullet">Analise de Sistemas</li>
-<li class="bullet">Análise de Requisitos</li>
-</ul>
-</div>
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>Outros</span>
-<span class="date">
-2000-01-01 — 2005-01-01
-</span>
-</h4>
-<div class="website pull-right">
-<a href=""></a>
-</div>
-<div class="position">
-Programador Jr.
-</div>
-<div class="summary">
-<p>Desenvolvimento freelancer, consultoria e projetos pessoais.</p>
-</div>
-<h4>Highlights</h4>
-<ul class="highlights">
-<li class="bullet">www.flogando.net</li>
-<li class="bullet">www.psdb-mg.org.br</li>
-<li class="bullet">PHP</li>
-<li class="bullet">ASP</li>
-<li class="bullet">ASP.NET</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="education" class="row">
-<aside class="col-sm-3">
-<h3>Education</h3>
-</aside>
-<div class="col-sm-9">
-<div class="row">
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>Centro Universitário do Sul de Minas</span>
-<span class="date">
-2008-01-01 — 2009-01-01
-</span>
-</h4>
-<div class="area">
-Sistemas de Informação
-</div>
-<div class="studyType">
-Bacharelado (Incompleto)
-</div>
-</div>
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>Centro Federal de Educação Tecnológica de Minas Gerais</span>
-<span class="date">
-2007-01-01 — 2010-01-01
-</span>
-</h4>
-<div class="area">
-Administração
-</div>
-<div class="studyType">
-Bacharelado (Incompleto)
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="awards" class="row">
-<aside class="col-sm-3">
-<h3>Awards</h3>
-</aside>
-<div class="col-sm-9">
-<div class="row">
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>Vencedor do Startup Brasil - Segunda Edição</span>
-</h4>
-<div class="date pull-right">
-<em>Awarded</em>
-2014-11-01
-</div>
-<div class="awarder">
-<em>by</em>
-<strong>Startup Brasil</strong>
-</div>
-<div class="summary">
-Fomos qualificados no edital do Startup Brasil concorrendo com outros 2mil projetos. Fui responsável pela confecção do projeto aderente ao edital, apresentação e relacionamento com os avaliadores.
-</div>
-</div>
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>Finalista Programa Locaweb Startup</span>
-</h4>
-<div class="date pull-right">
-<em>Awarded</em>
-2014-06-01
-</div>
-<div class="awarder">
-<em>by</em>
-<strong>Locaweb</strong>
-</div>
-</div>
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>Finalista Pitch Digital</span>
-</h4>
-<div class="date pull-right">
-<em>Awarded</em>
-2014-03-01
-</div>
-<div class="awarder">
-<em>by</em>
-<strong>San Pedro Valley</strong>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="skills" class="row">
-<aside class="col-sm-3">
-<h3>Skills</h3>
-</aside>
-<div class="col-sm-9">
-<div class="row">
-<div class="col-sm-6">
-<div class="name">
-<h4>Web Development</h4>
-</div>
-<ul class="keywords">
-<li>JavaScript</li>
-<li>CSS3</li>
-<li>HTML5</li>
-<li>ClojureScript</li>
-<li>React</li>
-<li>Redux/Flux/Re-frame</li>
-<li>React-Native</li>
-<li>Webpack/babel/grunt</li>
-<li>bootstrap, semantic ui, etc</li>
-</ul>
-</div>
-<div class="col-sm-6">
-<div class="name">
-<h4>Backend Development</h4>
-</div>
-<ul class="keywords">
-<li>Clojure</li>
-<li>Node.JS</li>
-<li>JVM</li>
-<li>Java</li>
-<li>Ruby on Rails</li>
-<li>NoSQL</li>
-<li>SQL</li>
-<li>Apache Kafka</li>
-<li>AWS/Cloud Computing</li>
-</ul>
-</div>
-<div class="col-sm-6">
-<div class="name">
-<h4>Teoria da Computação</h4>
-</div>
-<ul class="keywords">
-<li>Programação Funcional</li>
-<li>OOP</li>
-<li>CQRS/Event Sourcing</li>
-<li>Design Patterns</li>
-<li>Estrutura de dados</li>
-</ul>
-</div>
-<div class="col-sm-6">
-<div class="name">
-<h4>DevOps</h4>
-</div>
-<ul class="keywords">
-<li>GNU/Linux</li>
-<li>Vim</li>
-<li>Emacs</li>
-<li>Git</li>
-<li>Docker</li>
-<li>Vagrant</li>
-<li>Chef/puppet/ansible</li>
-</ul>
-</div>
-<div class="col-sm-6">
-<div class="name">
-<h4>WebDesign</h4>
-</div>
-<ul class="keywords">
-<li>Material Design</li>
-<li>Sketch</li>
-<li>GIMP (bitmap)</li>
-<li>InkScape (vectors)</li>
-</ul>
-</div>
-<div class="col-sm-6">
-<div class="name">
-<h4>Marketing Digital</h4>
-</div>
-<ul class="keywords">
-<li>Google Analytics</li>
-<li>Google Adsense</li>
-<li>Google adwords</li>
-<li>SEO</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="languages" class="row">
-<aside class="col-sm-3">
-<h3>Languages</h3>
-</aside>
-<div class="col-sm-9">
-<div class="row">
-<div class="col-sm-6">
-<div class="language">
-<strong>English</strong>
-</div>
-<div class="fluency">
-Fluente
-</div>
-</div>
-<div class="col-sm-6">
-<div class="language">
-<strong>Spanish</strong>
-</div>
-<div class="fluency">
-Fluente
-</div>
-</div>
-<div class="col-sm-6">
-<div class="language">
-<strong>Portuguese</strong>
-</div>
-<div class="fluency">
-Nativo/Proficiente
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="interests" class="row">
-<aside class="col-sm-3">
-<h3>Interests</h3>
-</aside>
-<div class="col-sm-9">
-<div class="row">
-<div class="col-sm-6">
-<div class="name">
-<h4>Software Livre</h4>
-</div>
-</div>
-<div class="col-sm-6">
-<div class="name">
-<h4> Empreendedorismo e Marketing Digital</h4>
-</div>
-</div>
-<div class="col-sm-6">
-<div class="name">
-<h4>Inovação e evolução tecnógica</h4>
-</div>
-</div>
-<div class="col-sm-6">
-<div class="name">
-<h4> Desenvolvimento Social de base Tecnológica.</h4>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="references" class="row">
-<aside class="col-sm-3">
-<h3>References</h3>
-</aside>
-<div class="col-sm-9">
-<div class="row">
-<div class="col-sm-12">
-<blockquote class="reference">
-<p>Mr. Meira is a true agile developer. He has strong leadership skills and is very easy going, a real teamwork player. He is very good at bringing development best practices and the latest technology to the projects he is involved.</p>
-<p class="name">
-<strong>— Diego Gomes - Via6/RockContent</strong>
-</p>
-</blockquote>
-</div>
-<div class="col-sm-12">
-<blockquote class="reference">
-<p>Alan é um grande profissional de tecnologia com approach organizacional e alma de empreendedor. Sempre preocupado com metodologias e conceitos ágeis de produção, se doa em prol do melhor aproveitamento dos recursos e de resultados tangíveis nos projetos em que atua.</p>
-<p class="name">
-<strong>— Marcus Albeny - Sambatech</strong>
-</p>
-</blockquote>
-</div>
-<div class="col-sm-12">
-<blockquote class="reference">
-<p>Alan é um profissional dedicado, comprometido com o seu desempenho e tecnicamente muito competente. É também uma pessoa de relacionamento fácil e muito confiável.</p>
-<p class="name">
-<strong>— Êdo Lage - HCS</strong>
-</p>
-</blockquote>
-</div>
-</div>
-</div>
-</section>
-</div>
-</body>
+strong {
+    font-weight: 700;
+}
+
+
+/* main container */
+
+#resume {
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+
+/* every section wrapper */
+
+.section {
+    margin-bottom: 1rem;
+}
+
+section .location {
+    margin-right: .5em;
+    color: #606d76;
+    font-weight: 700;
+}
+
+#contact {
+    margin-top: .5rem;
+}
+
+#profiles .item {
+    padding: 0;
+}
+
+#header>#profiles,
+#header>#contact,
+#skills,
+#languages,
+#interests {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+#header>div {
+    line-height: 1.5;
+}
+
+#header>div>div {
+    margin-right: 1.2em;
+}
+
+#header h1.name {
+    font-size: 2.8rem;
+    font-weight: 100;
+    line-height: 100%;
+}
+
+#header h2.label {
+    color: #202931;
+    font-size: 1.47rem;
+    font-weight: 300;
+}
+
+#header .picture {
+    width: 11em;
+    float: right;
+    border-radius: 4px;
+}
+
+.main-summary {
+    background: #f1f8ff;
+    padding: 1.2em 1em;
+    margin-top: 1rem;
+}
+
+.main-summary p {
+    margin: .15em 0 0;
+}
+
+h2.section-title {
+    display: inline-block;
+    background: #fff;
+    padding: 0 1em 0.3em 0;
+    color: #ff6d1f;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: none;
+    font-size: .9rem;
+}
+
+.section>header {
+    position: relative;
+}
+
+.fa {
+    margin-right: 0.25em;
+}
+
+.section>header::after {
+    position: absolute;
+    left: 0;
+    top: .7em;
+    height: 1px;
+    background: #ccc;
+    content: "";
+    width: 100%;
+    z-index: -100;
+    display: block;
+}
+
+.section.main-summary>section {
+    margin: 0;
+}
+
+.section>section>header {
+    font-size: 1.38rem;
+    position: relative;
+    margin-top: .7em;
+}
+
+.section>section>header:first-of-type {
+    margin: 0;
+}
+
+.section>section>header .space-left {
+    position: absolute;
+    left: -1.56rem;
+    top: 5px;
+    color: #aaa;
+    line-height: 1;
+    opacity: 0;
+}
+
+.position,
+.company,
+.organization,
+.institution,
+.date,
+.area,
+.studyType,
+.title,
+.awarder {
+    display: inline;
+}
+
+.position,
+.studyType,
+.area,
+.title,
+.language,
+.name {
+    font-weight: 600;
+}
+
+.company::before,
+.institution::before,
+.organization::before,
+.awarder::before {
+    content: "at "
+}
+
+.company,
+.institution,
+.organization,
+.awarder {
+    color: #606d76;
+    font-weight: 400;
+}
+
+.section header .date {
+    font-size: 1rem;
+    display: inline-table;
+    padding: .1em 0;
+    font-weight: 600;
+}
+
+ul.keywords,
+ul.courses {
+    margin-top: .5em;
+}
+
+ul.keywords li,
+ul.courses li {
+    display: inline-block;
+    margin: 2px 2px 2px 0;
+    padding: 4px 5px 5px;
+    font-size: .9rem;
+    line-height: 1;
+    text-transform: lowercase;
+    color: #3e6d8e;
+    background-color: #dfeaf1;
+    border: 0 solid #dfeaf1;
+    white-space: nowrap;
+}
+
+ul.keywords li:hover,
+ul.courses li:hover {
+    background: #dfeaf0;
+}
+
+.item {
+    padding: .5em 0;
+}
+
+.gpa {
+    padding-bottom: .5em;
+}
+
+.fa.social {
+    font-size: 1.1em;
+}
+
+
+/* Social Media Brand Colors */
+
+.google-plus {
+    color: #dd4b39;
+}
+
+.tumblr {
+    color: #32506d;
+}
+
+.foursquare {
+    color: #0072b1;
+}
+
+.facebook {
+    color: #3b5998;
+}
+
+.linkedin {
+    color: #007bb6;
+}
+
+.pinterest {
+    color: #cb2027;
+}
+
+.dribbble {
+    color: #ea4c89;
+}
+
+.instagram {
+    color: #517fa4;
+}
+
+.twitter {
+    color: #00aced;
+}
+
+.soundcloud {
+    color: #ff3a00;
+}
+
+.wordpress {
+    color: #21759b;
+}
+
+.youtube {
+    color: #bb0000;
+}
+
+.github {
+    color: #171515;
+}
+
+.stack-overflow {
+    color: #828386;
+    position: relative;
+}
+
+.flickr {
+    color: #ff0084;
+}
+
+.stack-overflow::after {
+    position: absolute;
+    left: 0;
+    content: '\f16c';
+    color: #f68a1f;
+    overflow: hidden;
+    height: 100%;
+}
+
+.telegram {
+    color: #2291c3;
+}
+
+#languages .item,
+#skills .item,
+#interests .item {
+    width: 15em;
+    padding: 0 .5em .5em 0;
+    border-bottom: none;
+}
+
+#skills .item {
+    width: 16em;
+}
+
+#skills .item .keywords {
+    width: 15em;
+}
+
+
+/* Skill chart */
+
+.level {
+    margin-bottom: .5em;
+}
+
+.level .bar {
+    border: 1px solid #ddd;
+    display: block;
+    width: 10em;
+    height: 5px;
+    position: relative;
+}
+
+.level .bar::after {
+    position: absolute;
+    content: " ";
+    top: 0;
+    left: 0;
+    background: black;
+    height: 5px;
+}
+
+.level.beginner .bar::after {
+    background: #EB5F51;
+    width: 2.5em;
+}
+
+.level.intermediate .bar::after {
+    background: #ffdf1f;
+    width: 5em;
+}
+
+.level.advanced .bar::after,
+.level.fluent .bar::after {
+    background: #5CB85C;
+    width: 7.5em;
+}
+
+.level.master .bar::after,
+.level.native.speaker .bar::after {
+    background: #59C596;
+    width: 10em;
+}
+
+#references .item {
+    padding-left: .5em;
+    border-left: 5px solid #ff6d1f;
+}
+
+.toggle-item {
+  visibility: hidden;
+}
+
+/******************
+*	HELPER CLASSES
+******************/
+
+.clear::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.display {
+    display: block;
+    opacity: 1 !important;
+}
+
+.margin1 {
+    margin-bottom: .5rem;
+}
+
+
+/****************
+*		TABLET
+****************/
+
+@media screen and (min-width: 602px) {
+    #resume {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+
+/****************
+*		LAPTOP
+****************/
+
+@media screen and (min-width: 1025px) {
+    li {
+        margin-left: 1.5em;
+    }
+    #resume {
+        width: 820px;
+        margin: 2rem auto;      
+    }
+    .section>section>header .space-left {
+        opacity: 1;
+        cursor: pointer;
+    }
+    .section>section {
+        margin-left: 1.67rem;
+    }
+    .toggle-item {
+        transform: translate(-9999px);
+    }
+    .toggle-item+label {
+        display: block;
+        margin-top: -16px;
+    }
+    .toggle-item:checked+label:after {
+        content: '\f0d7';
+    }
+    .toggle-item+label:after {
+        float: left;
+        cursor: pointer;
+        margin-left: -20px;
+        color: #aaa;
+        font-size: 16px;
+        content: '\f0da';
+        font-family: Fontawesome;
+    }
+    .toggle-item~.item {
+        height: 0;
+        opacity: 0;
+    }
+    .toggle-item:checked~.item {
+        height: auto;
+        opacity: 1;
+        transition: all .5s linear;
+    }
+    .company::before,
+    .institution::before,
+    .organization::before,
+    .awarder::before {
+        content: "| ";
+    }
+    .header-left {
+        float: left;
+        width: 70%;
+        word-break: normal;
+    }
+    .section header .date {
+        float: right;
+        padding: .2em;
+    }
+    .display {
+        display: none;
+    }
+    .display:not(.none) {
+        display: block;
+    }
+}
+
+@media print {
+    #resume {
+        margin: 0;
+        padding: 0;
+        -ms-word-wrap: break-word;
+        word-wrap: break-word;
+        line-height: 1.3;
+        /*font-family: Arial, Georgia, "Lucida Grande", sans-serif;*/
+    }
+    @page {
+        margin: 1cm 1.4cm;
+    }
+    .item-count {
+        display: none;
+    }
+    .company::before,
+    .institution::before,
+    .organization::before,
+    .awarder::before {
+        content: "at ";
+    }
+    .main-summary {
+        padding: 2rem 0;
+    }
+    .section {
+        margin: .8rem 0;
+        padding: 0;
+    }
+    .section header {
+        padding-bottom: .15rem;
+    }
+    .section .location {
+        padding-bottom: .15rem;
+    }
+    .stack-overflow::after {
+        content: "";
+    }
+    .fa.social {
+        color: #828386;
+    }
+    ul {
+        margin-top: .4em;
+    }
+    ul,
+    li {
+        padding: 0;
+    }
+    ul.keywords li,
+    ul.courses li {
+        margin: 0;
+        padding: 0;
+        font-size: .8rem;
+        text-transform: lowercase;
+    }
+    ul.keywords li::after,
+    ul.courses li::after {
+        padding: 0 0 0 .1rem;
+        content: " |";
+    }
+    ul.keywords::before,
+    ul.courses::before {
+        font-size: .8rem;
+        font-weight: 600;
+    }
+    ul.keywords::before {
+        content: "Skills acquired: ";
+    }
+    #skills .keywords::before {
+        content: '';
+    }
+    .section p {
+        margin: 0;
+        padding: 0;
+    }
+    ul.courses::before {
+        content: "Major courses: ";
+    }
+    ul.keywords li:last-of-type::after,
+    ul.courses li:last-of-type::after {
+        content: "";
+    }
+    .level em {
+        font-style: normal;
+        padding: .1em 0;
+    }
+    .level .bar {
+        display: none;
+    }
+    #profiles .item {
+        padding: 0;
+    }
+    .item.display {
+        display: block;
+        opacity: 1 !important;
+    }
+}
+
+  </style>
+  
+  </head>
+  <body>
+  
+  <div id="resume">
+    	<header id="header" class="clear">
+    		<img class="picture" src="data:image/jpeg;base64,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" alt="Alan Carlos Meira Leal" />
+    		<div class="middle">
+    			<h1 class="name">Alan Carlos Meira Leal</h1>
+    			<h2 class="label">Full Stack Software Engineer</h2>
+    		</div>
+    		
+    		<span class="location">
+    			<span class="city">São Paulo,</span> 
+    			<span class="region">Minas Gerais</span> 
+    			<span class="countryCode">BR</span> 
+    		</span>
+    		
+    
+    		<div id="contact">
+    			<div class="website">
+    				<span class="fa fa-external-link"></span>
+    				<a target="_blank" target="_blank" href="http://www.meiraleal.com">http://www.meiraleal.com</a>
+    			</div>
+    			<div class="phone">
+    				<span class="fa fa-mobile"></span>
+    				<a href="tel:(31) 99788 2008">(31) 99788 2008</a>
+    			</div>
+    		</div>
+    
+    		<div id="profiles">
+    			<div class="item">
+    				<div class="username">
+    					<span class="fa fa-linkedin linkedin social"></span>
+    					<span class="url">
+    						<a target="_blank" href="https://www.linkedin.com/in/alanmeira">alanmeira</a>
+    					</span> 
+    				</div>
+    			</div>
+    			<div class="item">
+    				<div class="username">
+    					<span class="fa fa-github github social"></span>
+    					<span class="url">
+    						<a target="_blank" href="https://github.com/meiraleal">meiraleal</a>
+    					</span> 
+    				</div>
+    			</div>
+    		</div>
+    	</header>
+    
+    	<section class="section main-summary">
+    		<section>
+    			<div><p>Desenvolvedor Fullstack. atuei nos mais variados setores de mercado e tecnologias, liderando em especial projetos de desenvolvimento web, bem como desenvolvimento mobile e desktop baseados em tecnologia web (por exemplo: React Native, PhoneGap, Electron). Tenho também experiência nos mais váriados tipos de empresa e ambiente, desde projetos solos até empresas com milhares de funcionários e equipes de centenas de pessoas. Estou aberto a propostas para trabalhar como lider técnico, desenvolvedor frontend, backend, devops ou gestor de projetos. </p></div>
+    		</section>
+    	</section>
+    
+    <section class="section margin1">
+    	<header>
+    		<h2 class='section-title'>Skills</h2>
+    	</header>
+    	<section id="skills">
+    		<div class="item">
+    			<h3 class="name">
+    				Web Development
+    			</h3>
+    			 
+    			<div class="level expert">
+    				<em>Expert</em>
+    				<div class="bar"></div>
+    			</div>
+    			<ul class="keywords">
+    				<li>JavaScript</li>
+    				<li>CSS3</li>
+    				<li>HTML5</li>
+    				<li>ClojureScript</li>
+    				<li>React</li>
+    				<li>Redux/Flux/Re-frame</li>
+    				<li>React-Native</li>
+    				<li>Webpack/babel/grunt</li>
+    				<li>bootstrap, semantic ui, etc</li>
+    			</ul>
+    		</div>
+    		<div class="item">
+    			<h3 class="name">
+    				Backend Development
+    			</h3>
+    			 
+    			<div class="level expert">
+    				<em>Expert</em>
+    				<div class="bar"></div>
+    			</div>
+    			<ul class="keywords">
+    				<li>Clojure</li>
+    				<li>Node.JS</li>
+    				<li>JVM</li>
+    				<li>Java</li>
+    				<li>Ruby on Rails</li>
+    				<li>NoSQL</li>
+    				<li>SQL</li>
+    				<li>Apache Kafka</li>
+    				<li>AWS/Cloud Computing</li>
+    			</ul>
+    		</div>
+    		<div class="item">
+    			<h3 class="name">
+    				Teoria da Computação
+    			</h3>
+    			 
+    			<div class="level avançado">
+    				<em>Avançado</em>
+    				<div class="bar"></div>
+    			</div>
+    			<ul class="keywords">
+    				<li>Programação Funcional</li>
+    				<li>OOP</li>
+    				<li>CQRS/Event Sourcing</li>
+    				<li>Design Patterns</li>
+    				<li>Estrutura de dados</li>
+    			</ul>
+    		</div>
+    		<div class="item">
+    			<h3 class="name">
+    				DevOps
+    			</h3>
+    			 
+    			<div class="level avançado">
+    				<em>Avançado</em>
+    				<div class="bar"></div>
+    			</div>
+    			<ul class="keywords">
+    				<li>GNU/Linux</li>
+    				<li>Vim</li>
+    				<li>Emacs</li>
+    				<li>Git</li>
+    				<li>Docker</li>
+    				<li>Vagrant</li>
+    				<li>Chef/puppet/ansible</li>
+    			</ul>
+    		</div>
+    		<div class="item">
+    			<h3 class="name">
+    				WebDesign
+    			</h3>
+    			 
+    			<div class="level intermediário">
+    				<em>Intermediário</em>
+    				<div class="bar"></div>
+    			</div>
+    			<ul class="keywords">
+    				<li>Material Design</li>
+    				<li>Sketch</li>
+    				<li>GIMP (bitmap)</li>
+    				<li>InkScape (vectors)</li>
+    			</ul>
+    		</div>
+    		<div class="item">
+    			<h3 class="name">
+    				Marketing Digital
+    			</h3>
+    			 
+    			<div class="level avançado">
+    				<em>Avançado</em>
+    				<div class="bar"></div>
+    			</div>
+    			<ul class="keywords">
+    				<li>Google Analytics</li>
+    				<li>Google Adsense</li>
+    				<li>Google adwords</li>
+    				<li>SEO</li>
+    			</ul>
+    		</div>
+    	</section>
+    </section>
+    <section class="section">
+      <header>
+        <h2 class='section-title'>Work Experience <span class="item-count">(14)</span></h2>
+      </header>
+    
+      <section id="work">
+        <section class="work-item">
+    
+    
+    			<header>
+    				<div class="position">Freelancer &amp; Consultor</div>
+    				<div class="company">Freelancer</div>
+    				<div class="date">
+    				  <span class="startDate">July 2017</span> 
+    					<span class="endDate">- Current</span>
+    				</div>
+    			</header>
+    			
+         	<div class="item" id="work-item">
+            <ul class="highlights">
+                <li><p>React</p></li>
+                <li><p>React Native</p></li>
+                <li><p>MongoDB</p></li>
+                <li><p>Angular 2/4</p></li>
+                <li><p>Node.JS</p></li>
+                <li><p>Telegram</p></li>
+            </ul>
+        	</div>
+        </section>
+        <section class="work-item">
+    
+            <input id="work-item-1" type="checkbox" class="toggle-item" />
+            <label for="work-item-1"></label>
+    
+    			<header>
+    				<div class="position">Frontend Engineer</div>
+    				<div class="company">Advantage Media Inc.</div>
+    				<div class="date">
+    				  <span class="startDate">November 2016</span> 
+    					<span class="endDate">- July 2017</span> 
+    				</div>
+    			</header>
+    			
+         	<div class="item" id="work-item">
+            <div class="summary">
+              <p><p>Responsável pelo frontend de um projeto de integração com o Google Adwords & DoubleClick. Comunicação 100% em inglês com os outros membros da equipe (dinamarqueses).</p></p>
+            </div>
+            <ul class="highlights">
+                <li><p>React</p></li>
+                <li><p>MongoDB</p></li>
+                <li><p>Angular 2/4</p></li>
+                <li><p>Node.JS</p></li>
+                <li><p>Google APIs</p></li>
+            </ul>
+        	</div>
+        </section>
+        <section class="work-item">
+    
+            <input id="work-item-2" type="checkbox" class="toggle-item" />
+            <label for="work-item-2"></label>
+    
+    			<header>
+    				<div class="position">Assessor de Tecnologia</div>
+    				<div class="company">Prefeitura de Maricá/RJ</div>
+    				<div class="date">
+    				  <span class="startDate">January 2016</span> 
+    					<span class="endDate">- August 2016</span> 
+    				</div>
+    			</header>
+    			
+         	<div class="item" id="work-item">
+            <div class="summary">
+              <p><p>Desenvolvimento de uma plataforma de chatbot em cima da API do Telegram</p></p>
+            </div>
+            <ul class="highlights">
+                <li><p>Telegram API</p></li>
+                <li><p>Clojure</p></li>
+                <li><p>DataScript</p></li>
+                <li><p>React Native</p></li>
+            </ul>
+        	</div>
+        </section>
+        <section class="work-item">
+    
+    
+    			<header>
+    				<div class="position">Freelancer</div>
+    				<div class="company">Freelancer/Indie Developer</div>
+    				<div class="date">
+    				  <span class="startDate">July 2014</span> 
+    					<span class="endDate">- December 2015</span> 
+    				</div>
+    			</header>
+    			
+         	<div class="item" id="work-item">
+            <ul class="highlights">
+                <li><p>Go</p></li>
+                <li><p>ASP.NET</p></li>
+                <li><p>React</p></li>
+                <li><p>React-Native</p></li>
+                <li><p>Clojure</p></li>
+                <li><p>DataScript</p></li>
+                <li><p>ClojureScript</p></li>
+            </ul>
+        	</div>
+        </section>
+        <section class="work-item">
+    
+            <input id="work-item-4" type="checkbox" class="toggle-item" />
+            <label for="work-item-4"></label>
+    
+    			<header>
+    				<div class="position">Full Stack Software Engineer</div>
+    				<div class="company">Veduca Edtech</div>
+    				<div class="date">
+    				  <span class="startDate">January 2013</span> 
+    					<span class="endDate">- May 2013</span> 
+    				</div>
+    			</header>
+    			
+         	<div class="item" id="work-item">
+            <div class="summary">
+              <p><p>Responsável por liderar, escolher o stack e coordenar a implementação de uma nova versão do sistema (substituindo uma versão em PHP) junto a uma equipe de outros 2 desenvolvedores, 1 designer, 1 gestor de produto e 1 gestor de conteúdo.</p></p>
+            </div>
+            <ul class="highlights">
+                <li><p>Ruby on Rails</p></li>
+                <li><p>PostgreSQL</p></li>
+                <li><p>JavaScript</p></li>
+                <li><p>sphinx</p></li>
+            </ul>
+        	</div>
+        </section>
+        <section class="work-item">
+    
+            <input id="work-item-5" type="checkbox" class="toggle-item" />
+            <label for="work-item-5"></label>
+    
+    			<header>
+    				<div class="position">Co-fundador e CTO</div>
+    				<div class="company">Engarte</div>
+    				<div class="date">
+    				  <span class="startDate">February 2012</span> 
+    					<span class="endDate">- October 2014</span> 
+    				</div>
+    			</header>
+    			
+         	<div class="item" id="work-item">
+            <div class="summary">
+              <p><p>Responsável por todo o ciclo de um projeto tecnológico, desde o desenvolvimento da versão 1.0, recrutamento, gestão de equipe e produto, captação de recursos a pitches em concursos.</p></p>
+            </div>
+            <ul class="highlights">
+                <li><p>Ruby on Rails</p></li>
+                <li><p>JavaScript</p></li>
+                <li><p>MongoDB</p></li>
+                <li><p>startups</p></li>
+                <li><p>marketing digital</p></li>
+                <li><p>CRM</p></li>
+            </ul>
+        	</div>
+        </section>
+        <section class="work-item">
+    
+            <input id="work-item-6" type="checkbox" class="toggle-item" />
+            <label for="work-item-6"></label>
+    
+    			<header>
+    				<div class="position">Analista de Sistemas</div>
+    				<div class="company">TOTVS</div>
+    				<div class="date">
+    				  <span class="startDate">November 2010</span> 
+    					<span class="endDate">- June 2011</span> 
+    				</div>
+    			</header>
+    			
+         	<div class="item" id="work-item">
+            <div class="summary">
+              <p><p>Integrante de uma equipe composta por 30 pessoas; Manutenção do sistema de Folha de Pagamentos da TOTVS, usado por algumas das maiores empresas do Brasil e da América Latina.</p></p>
+            </div>
+            <ul class="highlights">
+                <li><p>.NET</p></li>
+                <li><p>C#</p></li>
+                <li><p>Engenharia de Software</p></li>
+            </ul>
+        	</div>
+        </section>
+        <section class="work-item">
+    
+            <input id="work-item-7" type="checkbox" class="toggle-item" />
+            <label for="work-item-7"></label>
+    
+    			<header>
+    				<div class="position">Consultor Externo</div>
+    				<div class="company">MoIP</div>
+    				<div class="date">
+    				  <span class="startDate">June 2010</span> 
+    					<span class="endDate">- June 2011</span> 
+    				</div>
+    			</header>
+    			
+         	<div class="item" id="work-item">
+            <div class="summary">
+              <p><p>responsável pelo MoIP Labs, portal de relacionamento com a comunidade de desenvolvedores do MoIP</p></p>
+            </div>
+            <ul class="highlights">
+                <li><p>JavaScript</p></li>
+                <li><p>PHP</p></li>
+                <li><p>Ruby</p></li>
+                <li><p>Python</p></li>
+            </ul>
+        	</div>
+        </section>
+        <section class="work-item">
+    
+            <input id="work-item-8" type="checkbox" class="toggle-item" />
+            <label for="work-item-8"></label>
+    
+    			<header>
+    				<div class="position">Lead Full Stack Developer</div>
+    				<div class="company">Via6</div>
+    				<div class="date">
+    				  <span class="startDate">August 2009</span> 
+    					<span class="endDate">- November 2010</span> 
+    				</div>
+    			</header>
+    			
+         	<div class="item" id="work-item">
+            <div class="summary">
+              <p><p>Lider técnico; projeto com 2 milhões de usuários na base de dados;</p></p>
+            </div>
+            <ul class="highlights">
+                <li><p>PHP</p></li>
+                <li><p>CSS</p></li>
+                <li><p>Bootstrap</p></li>
+                <li><p>MySQL</p></li>
+                <li><p>Ruby on Rails</p></li>
+                <li><p>JavaScript</p></li>
+            </ul>
+        	</div>
+        </section>
+        <section class="work-item">
+    
+            <input id="work-item-9" type="checkbox" class="toggle-item" />
+            <label for="work-item-9"></label>
+    
+    			<header>
+    				<div class="position">Lead Developer</div>
+    				<div class="company">Docatel</div>
+    				<div class="date">
+    				  <span class="startDate">March 2009</span> 
+    					<span class="endDate">- August 2009</span> 
+    				</div>
+    			</header>
+    			
+         	<div class="item" id="work-item">
+            <div class="summary">
+              <p><p>Responsável por liderar a equipe de desenvolvimento e implantar melhores práticas. Projeto na área de engenharia de telecomunicações.</p></p>
+            </div>
+            <ul class="highlights">
+                <li><p>PHP</p></li>
+                <li><p>Agile Development</p></li>
+                <li><p>Python</p></li>
+                <li><p>Ruby on Rails</p></li>
+            </ul>
+        	</div>
+        </section>
+        <section class="work-item">
+    
+            <input id="work-item-10" type="checkbox" class="toggle-item" />
+            <label for="work-item-10"></label>
+    
+    			<header>
+    				<div class="position">Líder de Projeto/Software Engineer</div>
+    				<div class="company">Samba Tech</div>
+    				<div class="date">
+    				  <span class="startDate">August 2008</span> 
+    					<span class="endDate">- February 2009</span> 
+    				</div>
+    			</header>
+    			
+         	<div class="item" id="work-item">
+            <div class="summary">
+              <p><p>Responsável pela prototipação e migração do sistema de PHP para Ruby on Rails. Composição de equipe, liderança e arquitetura de software.</p></p>
+            </div>
+            <ul class="highlights">
+                <li><p>Ruby on Rails</p></li>
+                <li><p>SCRUM</p></li>
+                <li><p>AWS</p></li>
+                <li><p>GNU/Linux</p></li>
+                <li><p>emacs</p></li>
+            </ul>
+        	</div>
+        </section>
+        <section class="work-item">
+    
+            <input id="work-item-11" type="checkbox" class="toggle-item" />
+            <label for="work-item-11"></label>
+    
+    			<header>
+    				<div class="position">Lider de Projeto/Programador Sênior</div>
+    				<div class="company">HCS Comp.</div>
+    				<div class="date">
+    				  <span class="startDate">July 2007</span> 
+    					<span class="endDate">- September 2008</span> 
+    				</div>
+    			</header>
+    			
+         	<div class="item" id="work-item">
+            <div class="summary">
+              <p><p>Responsável pela gestão e organização dos projetos, liderança de equipe e interface com clientes.</p></p>
+            </div>
+            <ul class="highlights">
+                <li><p>PHP</p></li>
+                <li><p>.NET</p></li>
+                <li><p>Java</p></li>
+                <li><p>Ruby on Rails</p></li>
+            </ul>
+        	</div>
+        </section>
+        <section class="work-item">
+    
+    
+    			<header>
+    				<div class="position">Auxiliar de Analista de Sistemas</div>
+    				<div class="company">Cobrar NCA Recuperação de Creditos</div>
+    				<div class="date">
+    				  <span class="startDate">June 2005</span> 
+    					<span class="endDate">- June 2006</span> 
+    				</div>
+    			</header>
+    			
+         	<div class="item" id="work-item">
+            <ul class="highlights">
+                <li><p>PHP</p></li>
+                <li><p>SQL Server</p></li>
+                <li><p>Analise de Sistemas</p></li>
+                <li><p>Análise de Requisitos</p></li>
+            </ul>
+        	</div>
+        </section>
+        <section class="work-item">
+    
+            <input id="work-item-13" type="checkbox" class="toggle-item" />
+            <label for="work-item-13"></label>
+    
+    			<header>
+    				<div class="position">Programador Jr.</div>
+    				<div class="company">Outros</div>
+    				<div class="date">
+    				  <span class="startDate">January 2000</span> 
+    					<span class="endDate">- January 2005</span> 
+    				</div>
+    			</header>
+    			
+         	<div class="item" id="work-item">
+            <div class="summary">
+              <p><p>Desenvolvimento freelancer, consultoria e projetos pessoais.</p></p>
+            </div>
+            <ul class="highlights">
+                <li><p>www.flogando.net</p></li>
+                <li><p>www.psdb-mg.org.br</p></li>
+                <li><p>PHP</p></li>
+                <li><p>ASP</p></li>
+                <li><p>ASP.NET</p></li>
+            </ul>
+        	</div>
+        </section>
+      </section>
+    </section>
+    <section class="section">
+      <header>
+        <h2 class='section-title'>Education <span class="item-count">(2)</span></h2>
+      </header>
+    
+      <section id="education">
+        <section class="education-item">
+          <header>
+            <div class="header-left">
+              <div class="studyType">
+                Bacharelado (Incompleto)
+              </div>
+              <div class="area">
+                Sistemas de Informação
+              </div>
+              <div class="institution">
+                Centro Universitário do Sul de Minas
+              </div>
+            </div>
+            <div class="date">
+              <span class="startDate">
+              2008
+              </span>
+              <span class="endDate">
+              - 2009
+              </span>
+            </div>
+          </header>
+    
+    
+    
+          <div class="item">
+          </div>
+        </section>
+        <section class="education-item">
+          <header>
+            <div class="header-left">
+              <div class="studyType">
+                Bacharelado (Incompleto)
+              </div>
+              <div class="area">
+                Administração
+              </div>
+              <div class="institution">
+                Centro Federal de Educação Tecnológica de Minas Gerais
+              </div>
+            </div>
+            <div class="date">
+              <span class="startDate">
+              2007
+              </span>
+              <span class="endDate">
+              - 2010
+              </span>
+            </div>
+          </header>
+    
+    
+    
+          <div class="item">
+          </div>
+        </section>
+      </section>
+    </section>
+    <section class="section">
+      <header>
+        <h2 class='section-title'>Awards</h2>
+      </header>
+      <section id="awards">
+        <section class="award-item">
+            <input id="award-item-0" type="checkbox" class="toggle-item" checked="checked" />
+            <label for="award-item-0"></label>
+    
+          <header>
+            <div class="header-left">
+              <div class="title">
+                Vencedor do Startup Brasil - Segunda Edição
+              </div>
+              <div class="awarder">
+                Startup Brasil
+              </div>
+            </div>
+            <div class="date">
+              2014
+            </div>
+          </header>
+          
+          <div class="item">
+            <div class="summary">
+              <p><p>Fomos qualificados no edital do Startup Brasil concorrendo com outros 2mil projetos. Fui responsável pela confecção do projeto aderente ao edital, apresentação e relacionamento com os avaliadores.</p></p>
+            </div>
+          </div>
+        </section>
+        <section class="award-item">
+    
+          <header>
+            <div class="header-left">
+              <div class="title">
+                Finalista Programa Locaweb Startup
+              </div>
+              <div class="awarder">
+                Locaweb
+              </div>
+            </div>
+            <div class="date">
+              2014
+            </div>
+          </header>
+          
+          <div class="item">
+          </div>
+        </section>
+        <section class="award-item">
+    
+          <header>
+            <div class="header-left">
+              <div class="title">
+                Finalista Pitch Digital
+              </div>
+              <div class="awarder">
+                San Pedro Valley
+              </div>
+            </div>
+            <div class="date">
+              2014
+            </div>
+          </header>
+          
+          <div class="item">
+          </div>
+        </section>
+      </section>
+    </section>
+    <section class="section margin1">
+      <header>
+        <h2 class='section-title'>Languages</h2>
+      </header>
+      <section id="languages">
+        <div class="display">
+          <h3 class="language">
+            English
+          </h3>
+          <div class="item">
+            <div class="level fluency fluente">
+              <em>Fluente</em>
+              <div class="bar"></div>
+            </div>
+          </div>
+        </div>
+        <div class="display">
+          <h3 class="language">
+            Spanish
+          </h3>
+          <div class="item">
+            <div class="level fluency fluente">
+              <em>Fluente</em>
+              <div class="bar"></div>
+            </div>
+          </div>
+        </div>
+        <div class="display">
+          <h3 class="language">
+            Portuguese
+          </h3>
+          <div class="item">
+            <div class="level fluency nativo/proficiente">
+              <em>Nativo/Proficiente</em>
+              <div class="bar"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section class="section margin1">
+      <header>
+        <h2 class='section-title' class='section-title'>Interests</h2>
+      </header>
+      <section id="interests">
+        <div class="item">
+          <h3 class="name">
+            Software Livre
+          </h3>
+        </div>
+        <div class="item">
+          <h3 class="name">
+             Empreendedorismo e Marketing Digital
+          </h3>
+        </div>
+        <div class="item">
+          <h3 class="name">
+            Inovação e evolução tecnógica
+          </h3>
+        </div>
+        <div class="item">
+          <h3 class="name">
+             Desenvolvimento Social de base Tecnológica.
+          </h3>
+        </div>
+      </section>
+    </section>
+    <section class="section">
+      <header>
+        <h2 class='section-title'>References</h2>
+      </header>
+      <section id="references">
+        <div class="item">
+          <blockquote class="reference">
+            &#8220;&#32;Mr. Meira is a true agile developer. He has strong leadership skills and is very easy going, a real teamwork player. He is very good at bringing development best practices and the latest technology to the projects he is involved.&#32;&#8221;
+          </blockquote>
+          <div class="name">
+            Diego Gomes - Via6/RockContent
+          </div>
+        </div>
+        <div class="item">
+          <blockquote class="reference">
+            &#8220;&#32;Alan é um grande profissional de tecnologia com approach organizacional e alma de empreendedor. Sempre preocupado com metodologias e conceitos ágeis de produção, se doa em prol do melhor aproveitamento dos recursos e de resultados tangíveis nos projetos em que atua.&#32;&#8221;
+          </blockquote>
+          <div class="name">
+            Marcus Albeny - Sambatech
+          </div>
+        </div>
+        <div class="item">
+          <blockquote class="reference">
+            &#8220;&#32;Alan é um profissional dedicado, comprometido com o seu desempenho e tecnicamente muito competente. É também uma pessoa de relacionamento fácil e muito confiável.&#32;&#8221;
+          </blockquote>
+          <div class="name">
+            Êdo Lage - HCS
+          </div>
+        </div>
+      </section>
+    </section>
+
+  </body>
 </html>
